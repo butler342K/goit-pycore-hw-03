@@ -39,7 +39,7 @@ def get_numbers_ticket(min, max, quantity):
     elif min>= max:
         raise ValueError('Min value must be less than Max value')
 
-    if not (quantity > min and quantity < max):
+    if quantity < 1 or quantity > (max - min + 1):
         raise ValueError('Quantity must be between Min and Max values')
 
     while len(random_set) < quantity:   # add unique numbers to the set until it reaches the required quantity
@@ -99,7 +99,7 @@ print(f'Days from the date 2021-10-09 to today: {days} days')
 print(' ')
 
 print('Task 2: Generate a list of unique lottery numbers')
-lottery_numbers = get_numbers_ticket(1, 49, 6)
+lottery_numbers = get_numbers_ticket(10, 12, 1)
 print(f'Ваші лотерейні числа: {lottery_numbers}')
 print(' ')
 
